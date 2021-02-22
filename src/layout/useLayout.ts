@@ -1,5 +1,7 @@
 import {
+  Dispatch,
   RefObject,
+  SetStateAction,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -86,6 +88,11 @@ export interface LayoutResult {
    * Fit the canvas to the viewport.
    */
   fitCanvas?: () => void;
+
+  /**
+   * Change the X/Y of the canvas.
+   */
+  setCanvasXY?: (XY: Dispatch<SetStateAction<[x: number, y: number]>>) => void;
 }
 
 export const useLayout = ({
@@ -223,6 +230,7 @@ export const useLayout = ({
     layout,
     scrollXY,
     centerCanvas,
-    fitCanvas
+    fitCanvas,
+    setCanvasXY: setXY
   } as LayoutResult;
 };
