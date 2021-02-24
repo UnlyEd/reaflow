@@ -93,6 +93,11 @@ export interface LayoutResult {
    * Change the X/Y of the canvas.
    */
   setCanvasXY?: (XY: Dispatch<SetStateAction<[x: number, y: number]>>) => void;
+
+  /**
+   * Change scroll X/Y of the canvas.
+   */
+  setScrollXY?: (XY: Dispatch<SetStateAction<[x: number, y: number]>>) => void;
 }
 
 export const useLayout = ({
@@ -231,6 +236,7 @@ export const useLayout = ({
     scrollXY,
     centerCanvas,
     fitCanvas,
-    setCanvasXY: setXY
+    setCanvasXY: setXY,
+    setScrollXY
   } as LayoutResult;
 };
